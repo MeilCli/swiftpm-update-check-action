@@ -1,4 +1,5 @@
 import * as os from "os";
+import * as core from "@actions/core";
 
 export interface OutdatedPackage {
     readonly name: string;
@@ -34,5 +35,10 @@ export function extractJsonStringFromPostfix(value: string): string {
 }
 
 export function toPackage(value: string): Package {
-    return JSON.parse(value) as Package;
+    try {
+        return JSON.parse(value) as Package;
+    } catch (error) {
+        core.info(`fail parse json: ${value}`);
+        throw error;
+    }
 }
