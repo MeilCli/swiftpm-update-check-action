@@ -56,9 +56,7 @@ async function executeOutdated(
     const result: OutdatedPackage[] = [];
 
     for (const dependency of dependencies) {
-        const directory = path.dirname(
-            path.relative(process.cwd(), dependency.path)
-        );
+        const directory = path.relative(process.cwd(), dependency.path);
         const tagFile = "cocoapods-update-check.txt";
         await exec.exec(`git tag > ${tagFile}`, undefined, { cwd: directory });
         const tags: string = fs
