@@ -8,7 +8,7 @@ export interface OutdatedPackage {
 }
 
 export interface Package {
-    readonly denpendencies: Dependency[];
+    readonly dependencies: Dependency[];
 }
 
 export interface Dependency {

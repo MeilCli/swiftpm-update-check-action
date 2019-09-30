@@ -61,7 +61,7 @@ async function executeOutdated(
     const projectPackage: Package = toPackage(
         extractJsonStringFromPostfix(stdout)
     );
-    const dependencies: Dependency[] = projectPackage.denpendencies;
+    const dependencies: Dependency[] = projectPackage.dependencies;
     const result: OutdatedPackage[] = [];
 
     for (const dependency of dependencies) {
