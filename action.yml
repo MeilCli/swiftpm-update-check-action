@@ -1,0 +1,19 @@
+name: 'SwiftPM update checker'
+description: 'SwiftPM new package version checker'
+author: 'MeilCli'
+branding:
+  icon: arrow-up
+  color: blue
+inputs:
+  execute_directories:
+    description: 'execute directories of pod outdated command'
+outputs:
+  has_swiftpm_update:
+    description: 'has new package version information'
+  swiftpm_update_text:
+    description: 'new package version information text'
+  swiftpm_update_json:
+    description: 'new package version information json'
+runs:
+  using: 'node12'
+  main: 'lib/main.js'
