@@ -66,12 +66,16 @@ async function executeOutdated(
 
     for (const dependency of dependencies) {
         const directory = path.relative(process.cwd(), dependency.path);
-        const tagFile = "cocoapods-update-check.txt";
-        await exec.exec(`git tag > ${tagFile}`, undefined, { cwd: directory });
-        const tags: string = fs
-            .readFileSync(path.join(directory, tagFile))
-            .toString();
-        await io.rmRF(path.join(directory, tagFile));
+
+        const childExecOption: ExecOptions = { cwd: directory };
+        let tags = "";
+        childExecOption.listeners = {
+            stdout: (data: Buffer) => {
+                tags += data.toString();
+            }
+        };
+
+        await exec.exec(`git tag`, undefined, childExecOption);
 
         const latest = getLatest(dependency.version, tags);
         if (latest != dependency.version) {
