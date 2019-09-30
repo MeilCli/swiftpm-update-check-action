@@ -6,7 +6,7 @@ import * as path from "path";
 import * as fs from "fs";
 import * as process from "process";
 import { ExecOptions } from "@actions/exec/lib/interfaces";
-import { OutdatedPackage, toPackage } from "./json";
+import { OutdatedPackage, extractJsonStringFromPostfix, toPackage } from "./json";
 import { getLatest } from "./semver";
 
 interface Option {
@@ -52,7 +52,8 @@ async function executeOutdated(
         execOption
     );
 
-    const dependencies = toPackage(stdout).denpendencies;
+    const dependencies = toPackage(extractJsonStringFromPostfix(stdout))
+        .denpendencies;
     const result: OutdatedPackage[] = [];
 
     for (const dependency of dependencies) {
