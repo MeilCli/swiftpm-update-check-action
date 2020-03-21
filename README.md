@@ -19,7 +19,7 @@ jobs:
     runs-on: macOS-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: MeilCli/swiftpm-update-check-action@v1
+    - uses: MeilCli/swiftpm-update-check-action@v2
       id: outdated
     - uses: 8398a7/action-slack@v2
       if: steps.outdated.outputs.has_swiftpm_update != 'false'
