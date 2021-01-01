@@ -48,5 +48,8 @@ You can also pin to a [specific release](https://github.com/MeilCli/swiftpm-upda
 - `swiftpm_update_json`
   - new package version information json
 
+## Contributing
+see [Contributing.md](./.github/CONTRIBUTING.md)
+
 ## License
 [MIT License](LICENSE).
