@@ -107,7 +107,9 @@ async function run() {
         core.setOutput("swiftpm_update_text", outputText);
         core.setOutput("swiftpm_update_json", JSON.stringify(result));
     } catch (error) {
-        core.setFailed(error.message);
+        if (error instanceof Error) {
+            core.setFailed(error.message);
+        }
     }
 }
 
