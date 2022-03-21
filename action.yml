@@ -15,5 +15,5 @@ outputs:
   swiftpm_update_json:
     description: 'new package version information json'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
