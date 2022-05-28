@@ -48,8 +48,11 @@ You can also pin to a [specific release](https://github.com/MeilCli/swiftpm-upda
 - `swiftpm_update_json`
   - new package version information json
 
-## Contributing
+## Contributes
+[<img src="https://gist.github.com/MeilCli/c07872f1d319a059ef5cfd746ebc63e8/raw/b0a8db64cc73bc05ae02b0b6bc5181088f0d6468/metrics_contributors.svg">](https://github.com/MeilCli/swiftpm-update-check-action/graphs/contributors)
+
+### Could you want to contribute?
 see [Contributing.md](./.github/CONTRIBUTING.md)
 
 ## License
-[MIT License](LICENSE).
+[<img src="https://gist.github.com/MeilCli/c07872f1d319a059ef5cfd746ebc63e8/raw/b0a8db64cc73bc05ae02b0b6bc5181088f0d6468/metrics_licenses.svg">](LICENSE)
